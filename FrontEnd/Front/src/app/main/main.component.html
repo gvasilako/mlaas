@@ -1,0 +1,17 @@
+<form>
+    <label for="fname"> Sepal Length: </label><br>
+    <input type="text" id="fname" name="fname" [(ngModel)] = "sl" ><br>
+    <label for="lname"> Sepal Width: </label><br>
+    <input type="text" id="lname" name="lname" [(ngModel)] = "sw" ><br>
+    <label for="gname"> Petal Length: </label><br>
+    <input type="text" id="gname" name="gname" [(ngModel)] = "pl" ><br>
+    <label for="hname"> Petal Width: </label><br>
+    <input type="text" id="hname" name="hname" [(ngModel)] = "pw" ><br><br>
+    <button (click)="Submit()">Submit</button>
+</form>
+<div class="row" *ngIf="prediction!=''" style="margin-top: 3rem;">
+    <div class="col">
+        <h3>Answer: {{prediction}} </h3> 
+    </div>
+</div>
+

@@ -1,0 +1,11 @@
+{
+  "model": "logistic",
+  "LOGISTIC":
+  {
+    "max_iter": 300
+  },
+  "SVM":
+  {
+
+  }
+}
