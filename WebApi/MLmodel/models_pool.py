@@ -2,9 +2,27 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVC
 import pickle
 import os
+from abc import ABC, abstractmethod
 
+class Model(ABC):
 
-class LR:
+    @abstractmethod
+    def train(self, *args, **kwargs):
+        pass
+
+    @abstractmethod
+    def predict(self, *args, **kwargs):
+        pass
+
+    @abstractmethod
+    def save_model(self, *args, **kwargs):
+        pass
+
+    @abstractmethod
+    def load_model(self, *args, **kwargs):
+        pass
+
+class LR(Model):
 
     def __init__(self, *args, **kwargs):
         self.estimator = LogisticRegression(*args, **kwargs)
@@ -27,7 +45,7 @@ class LR:
         self.estimator = pickle.load(open(weights_dir + "/model.pkl", "rb"))
         return self
 
-class SVM:
+class SVM(Model):
 
     def __init__(self, *args, **kwargs):
         self.estimator = SVC(*args, **kwargs)
