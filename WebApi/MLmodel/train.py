@@ -1,3 +1,5 @@
+# Dummy training without out of sample error estimation and hyperparameter tuning
+
 from sklearn.datasets import load_iris
 import models_pool
 import os
@@ -21,7 +23,7 @@ model = model_class(**config[model_name.upper()])
 # train model
 model.train(X, y)
 
-# check performance
+# check performance on training dataset
 print(accuracy_score(y, model.predict(X)))
 print(confusion_matrix(y, model.predict(X)))
 
